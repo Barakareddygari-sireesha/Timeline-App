@@ -3,23 +3,25 @@
 <head>
   <title>Timeline-App</title>
   <link rel="stylesheet" href="css/light.css" />
+  <link id="theme-link" rel="stylesheet" href="css/light.css">
 </head>
 
 <body>
   <header>
-    <div>
-      <div class="logo" id="title">
-        <h1>Timeline App</h1>
-      </div>
-      <button id="theme-toggle" onclick="changeTheme()">Theme</button>
+    <div class="logo" id="title">
+      <h1>Timeline App</h1>
     </div>
+    <label class="theme-toggle">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
   </header>
 
-  <nav>   </nav>
+  <nav> </nav>
 
   <main>
     <section id="timeline">
-      <article>      </article>
+      <article> </article>
       <div class="event" onclick="showDetails('1983')">
         <h2 class="year" id="1983">1983</h2>
       </div>
@@ -43,16 +45,18 @@
       <div class="event" onclick="showDetails('2019')">
         <h2 class="year" id="2019">2019</h2>
       </div>
-
     </section>
 
-    <div id="details" class="details-box">
+    <article id="details" class="details-box">
       <h2>Select the year</h2>
-    </div>
-
+    </article>
   </main>
 
-  <div id="modal" hidden></div>
+  <div id="modal" class="modal" >
+    <div class="modal-content">
+      <span id="close-modal"></span>
+    </div>
+  </div>
 
   <script>
     const yearData = {
@@ -101,18 +105,26 @@
       const detailsDiv = document.getElementById("details");
       detailsDiv.innerHTML = `
         <h2>${year} - ${data.title}</h2>
-        <p>${data.text}</p>
-        <img src="${data.image}" alt="${data.title}">
+         <figure>
+          <img src="${data.image}" alt="${data.title}">
+          <figcaption>${data.text}</figcaption>
+        </figure>
       `;
 
       const yearDiv = document.getElementById(year);
       yearDiv.style.color = 'red'
     }
 
-    function changeTheme() {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeLink = document.getElementById("theme-link");
 
-    }
-
+    themeToggle.addEventListener("change", function () {
+      if (this.checked) {
+        themeLink.setAttribute("href", "css/dark.css");
+      } else {
+        themeLink.setAttribute("href", "css/light.css");
+      }
+    });
 
   </script>
 

@@ -4,14 +4,32 @@
   color: black;
 }
 
-#theme-toggle {
-  margin-top: 1%;
-  margin-left: 95% ;
+label{
+  float: right;
+  margin: 1% 0;
+}
+
+header {
+  border-radius: 15px;
+  padding-top: 10px ;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+header .logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
   color: black;
+  text-decoration: underline;
 }
 
 .year {
-  margin: 20% 0% 2%;  
+  margin: 40% 0% 2%;
   color: black;
 }
 
@@ -26,6 +44,7 @@
 body {
   font-family: sans-serif;
   padding: 5%;
+  background-color: white;
 }
 
 
@@ -71,7 +90,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-family: sans-serif;
 }
@@ -88,7 +107,103 @@ body {
   color: black;
 }
 
-.details-box p {
+.details-box figcaption {
   font-size: 0.95rem;
-  color: #333;
+  color: black;
+}
+
+.theme-toggle {
+  position: relative;
+  display: flex;
+  width: 50px;
+  height: 25px;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(211, 211, 210);
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: rgb(204, 200, 200);
+}
+
+input:checked+.slider:before {
+  transform: translateX(24px);
+}
+
+/* Mobile devices (less than 768px) */
+@media (max-width: 767px) {
+  #timeline {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .details-box {
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  label {
+    float: none;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Tablet devices (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #timeline {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .details-box {
+    width: 80%;
+  }
+}
+
+/* Desktop devices (1024px and above) */
+@media (min-width: 1024px) {
+  #timeline {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .details-box {
+    width: 400px;
+  }
+}
+
+#modal {
+  display: none; 
 }

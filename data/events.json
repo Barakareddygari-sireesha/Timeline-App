@@ -1,0 +1,58 @@
+[
+    {
+        "year": "1983",
+        "title": "First Portable Mobile Phone",
+        "description": "Motorola DynaTAC 8000X launched — nicknamed 'The Brick'.",
+        "imageURL": "images/1983.jpg",
+        "category": "Mobile"
+    },
+    {
+        "year": "1992",
+        "title": "First SMS",
+        "description": "Neil Papworth sends 'Merry Christmas' via Orbitel TPU 900.",
+        "imageURL": "images/1992.jpg",
+        "category": "Messaging"
+    },
+    {
+        "year": "1999",
+        "title": "Cameras & Internet",
+        "description": "First camera phones and internet-enabled devices appear.",
+        "imageURL": "images/1999.jpg",
+        "category": "Internet"
+    },
+    {
+        "year": "2004",
+        "title": "Birth of Facebook",
+        "description": "Mark Zuckerberg launches Facebook, revolutionizing social networking.",
+        "imageURL": "images/2004.jpg",
+        "category": "Social Media"
+    },
+    {
+        "year": "2007",
+        "title": "First iPhone",
+        "description": "Apple launches iPhone, changing the smartphone landscape.",
+        "imageURL": "images/2007.jpg",
+        "category": "Mobile"
+    },
+    {
+        "year": "2008",
+        "title": "First Android",
+        "description": "HTC launches the first Android phone, marking the start of Google’s smartphone era.",
+        "imageURL": "images/2008.jpg",
+        "category": "Mobile"
+    },
+    {
+        "year": "2011",
+        "title": "Rise of AI Assistants",
+        "description": "The era of voice-powered AI begins with Apple's Siri in 2011, followed by Microsoft's Cortana and Amazon's Alexa in 2014, and Google Assistant in 2016. In 2022, ChatGPT ushers in a new wave of conversational AI, transforming how people interact with technology.",
+        "imageURL": "images/2011.jpg",
+        "category": "AI"
+    },
+    {
+        "year": "2019",
+        "title": "Rise of 5G",
+        "description": "5G networks bring ultra-fast connectivity to mobiles.",
+        "imageURL": "images/2019.jpg",
+        "category": "Network"
+    }
+]

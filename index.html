@@ -20,113 +20,17 @@
   <nav> </nav>
 
   <main>
-    <section id="timeline">
-      <article> </article>
-      <div class="event" onclick="showDetails('1983')">
-        <h2 class="year" id="1983">1983</h2>
-      </div>
-
-      <div class="event" onclick="showDetails('1992')">
-        <h2 class="year" id="1992">1992</h2>
-      </div>
-
-      <div class="event" onclick="showDetails('1999')">
-        <h2 class="year" id="1999">1999</h2>
-      </div>
-
-      <div class="event" onclick="showDetails('2007')">
-        <h2 class="year" id="2007">2007</h2>
-      </div>
-
-      <div class="event" onclick="showDetails('2008')">
-        <h2 class="year" id="2008">2008</h2>
-      </div>
-
-      <div class="event" onclick="showDetails('2019')">
-        <h2 class="year" id="2019">2019</h2>
-      </div>
-    </section>
-
-    <article id="details" class="details-box">
-      <h2>Select the year</h2>
-    </article>
+    <section id="timeline"></section>
+    <article></article>
   </main>
 
-  <div id="modal" class="modal" >
+  <div id="modal" class="modal">
     <div class="modal-content">
       <span id="close-modal"></span>
     </div>
   </div>
 
-  <script>
-    const yearData = {
-      "1983": {
-        title: "First Portable Mobile Phone",
-        text: "Motorola DynaTAC 8000X launched — nicknamed 'The Brick.'",
-        image: "images/1983.jpg"
-      },
-      "1992": {
-        title: "First SMS",
-        text: "Neil Papworth sends 'Merry Christmas' via Orbitel TPU 900.",
-        image: "images/1992.jpg"
-      },
-      "1999": {
-        title: "Cameras & Internet",
-        text: "First camera phones and internet-enabled devices appear.",
-        image: "images/1999.jpg"
-      },
-      "2007": {
-        title: "First iPhone",
-        text: "Apple launches iPhone, changing the smartphone landscape.",
-        image: "images/2007.jpg"
-      },
-      "2008": {
-        title: "First Android",
-        text: "HTC launches the first Android phone, marking the beginning of Google’s smartphone era.",
-        image: "images/2008.jpg"
-      },
-      "2019": {
-        title: "Rise of 5G",
-        text: "5G networks bring ultra-fast connectivity to mobiles.",
-        image: "images/2019.jpg"
-      }
-    };
-
-    function showDetails(year) {
-      console.log("Clicked year:", year);
-
-      var yearElements = document.getElementsByClassName('year');
-      for (var i = 0; i < yearElements.length; i++) {
-        console.log(yearElements[i]);
-        yearElements[i].style.color = '';
-      }
-
-      const data = yearData[year];
-      const detailsDiv = document.getElementById("details");
-      detailsDiv.innerHTML = `
-        <h2>${year} - ${data.title}</h2>
-         <figure>
-          <img src="${data.image}" alt="${data.title}">
-          <figcaption>${data.text}</figcaption>
-        </figure>
-      `;
-
-      const yearDiv = document.getElementById(year);
-      yearDiv.style.color = 'red'
-    }
-
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeLink = document.getElementById("theme-link");
-
-    themeToggle.addEventListener("change", function () {
-      if (this.checked) {
-        themeLink.setAttribute("href", "css/dark.css");
-      } else {
-        themeLink.setAttribute("href", "css/light.css");
-      }
-    });
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 

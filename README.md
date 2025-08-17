@@ -1,12 +1,11 @@
 # Timeline-App
 
-This is the Task-2 in building a timeline app.
+This is the Task-4 in building a timeline app.
 
-1. Responsive layout using Flexbox for the timeline.
-2. Styled header, typography, and colour scheme.
-3. Placeholder styles for event markers (dots and labels).
-4. Modal base styles included (hidden by default).
-5. Design adapts at breakpoints:
-    - Mobile: <768px
-    - Tablet: 768–1023px
-    - Desktop: ≥1024px
+1. Introduced static typing and modular code.
+2. Initialized TypeScript. Created tsconfig.json with strict mode enabled.
+3. Converted script.js → src/index.ts.
+    1. Defined interfaces/types in types.ts for event data.
+    2. Used ES modules: (fetcher.ts ,renderer.ts , modal.ts ,index.ts )
+4. Added build scripts to compile TypeScript (tsc) into a dist/ folder.
+5. Verified the app works in browser using the compiled JavaScript.

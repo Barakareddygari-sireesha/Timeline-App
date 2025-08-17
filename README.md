@@ -1,12 +1,9 @@
 # Timeline-App
 
-This is the Task-2 in building a timeline app.
+This is the Task-3 in building a timeline app.
 
-1. Responsive layout using Flexbox for the timeline.
-2. Styled header, typography, and colour scheme.
-3. Placeholder styles for event markers (dots and labels).
-4. Modal base styles included (hidden by default).
-5. Design adapts at breakpoints:
-    - Mobile: <768px
-    - Tablet: 768–1023px
-    - Desktop: ≥1024px
+1.Added events.json with atleast 8 events.
+2.Created script.js to fetch and parse JSON.
+3.Rendered timeline markers dynamically.
+4.Click on year which opens modal with event details and added close button to modal.
+5.Linked script.js at end of body tag in index.html.

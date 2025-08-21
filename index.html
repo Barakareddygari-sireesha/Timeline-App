@@ -1,37 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Timeline-App</title>
-  
-  <link id="theme-link" rel="stylesheet" href="css/light.css">
-</head>
-
-<body>
-  <header>
-    <div class="logo" id="title">
-      <h1>Timeline App</h1>
-    </div>
-    <label class="theme-toggle">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-  </header>
-
-  <nav> </nav>
-
-  <main>
-    <section id="timeline"></section>
-    <article></article>
-  </main>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="close-modal"></span>
-    </div>
-  </div>
-
-  <script type="module" src="dist/index.js"></script>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline App</title>
+    <link id="theme-link" rel="stylesheet" href="/css/light.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

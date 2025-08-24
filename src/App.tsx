@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import ThemeToggle from "./components/ThemeToggle";
 import Timeline from "./components/Timeline";
 import EventModal from "./components/EventModal";
 import eventsData from "./data/events.json";
@@ -14,7 +15,7 @@ function App() {
     setIsModalOpen(true);
   };
 
- const handleCloseModal = () => {
+  const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedEvent(null);
   };
@@ -24,17 +25,19 @@ function App() {
   };
 
   useEffect(() => {
-    const themeLink = document.getElementById("theme-link") as HTMLLinkElement;
-    if (themeLink) {
-      themeLink.setAttribute("href", isDark ? "css/dark.css" : "css/light.css");
+    if (isDark) {
+      document.body.classList.add("dark-mode");
+      document.body.classList.remove("light-mode");
+    } else {
+      document.body.classList.add("light-mode");
+      document.body.classList.remove("dark-mode");
     }
   }, [isDark]);
 
-  
-
   return (
     <>
-      <Header isDark={isDark} onToggle={handleToggleTheme} />
+      <Header/>
+       <ThemeToggle isDark={isDark} onToggle={handleToggleTheme} />
       <Timeline events={eventsData} onEventClick={handleEventClick} />
       {isModalOpen && selectedEvent && (
         <EventModal event={selectedEvent} onClose={handleCloseModal} />

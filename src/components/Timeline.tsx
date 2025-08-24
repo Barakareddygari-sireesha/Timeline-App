@@ -1,21 +1,34 @@
-import EventMarker from "./EventMarker";
+import { useState } from "react";
 import { EventData } from "../data/types";
+import EventMarker from "./EventMarker";
+import EventModal from "./EventModal";
 
 interface TimelineProps {
   events: EventData[];
   onEventClick: (event: EventData) => void;
 }
 
-function Timeline({ events, onEventClick }: TimelineProps) {
+function Timeline({ events }: TimelineProps) {
+  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
+
   return (
-    <section id="timeline">
-      {events.map((ev) => (
+    <div id="timeline">
+      {events.map((event) => (
         <EventMarker
-          key={ev.year}
-          event={ev}
-          onClick={() => onEventClick(ev)} />
+          key={event.year}
+          event={event}
+          isActive={selectedEvent?.year === event.year}
+          onClick={() => setSelectedEvent(event)}
+        />
       ))}
-    </section>
+
+      {selectedEvent && (
+        <EventModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
+        />
+      )}
+    </div>
   );
 }
 
